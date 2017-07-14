@@ -8,6 +8,8 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseAuthUI
+import FirebasePhoneAuthUI
 
 class verificationCodeViewController: UIViewController {
 
@@ -20,33 +22,27 @@ class verificationCodeViewController: UIViewController {
 
     
     @IBAction func loginButton(_ sender: Any) {
+        
+        
+        //phone number verification
         let defaults = UserDefaults.standard
         let credential = PhoneAuthProvider.provider().credential(withVerificationID: defaults.string(forKey: "authVerificationID")!, verificationCode: codeText.text!)
         Auth.auth().signIn(with: credential) { (user, error) in
             if error != nil {
-                print("error: \(String(describing: error?.localizedDescription))")
+                assertionFailure("Error signing in: \(String(describing: error?.localizedDescription))")
+                return
             } else {
-                print("Phone number: \(String(describing: user?.phoneNumber))")
                 let userInfo = user?.providerData[0]
-                print("Provider ID: \(String(describing: userInfo?.providerID))")
                 self.performSegue(withIdentifier: "logged", sender: Any?.self)
             }
         }
+        
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

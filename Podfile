@@ -8,5 +8,9 @@ target 'SCTicket' do
   # Pods for SCTicket
   pod ‘Firebase/Core’
   pod ‘Firebase/Auth’
+  pod 'FirebaseUI/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  pod ‘FirebaseUI/Phone’
 
 end

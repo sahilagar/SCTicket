@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJT-ZE-TU7">
-                                <rect key="frame" x="127" y="294" width="76" height="30"/>
+                                <rect key="frame" x="149" y="294" width="76" height="30"/>
                                 <state key="normal" title="Send Code"/>
                                 <connections>
                                     <action selector="sendCodeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IYw-1O-uQi"/>
@@ -39,11 +39,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Bsm-4V-e7G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TLR-WS-zeK"/>
-                            <constraint firstItem="rJT-ZE-TU7" firstAttribute="top" secondItem="Bsm-4V-e7G" secondAttribute="bottom" constant="8" symbolic="YES" id="W0r-3c-GAe"/>
-                            <constraint firstItem="rJT-ZE-TU7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="127" id="fLb-rG-9dp"/>
-                            <constraint firstItem="Bsm-4V-e7G" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="68" id="fbY-RI-Yvn"/>
-                            <constraint firstItem="Bsm-4V-e7G" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="236" id="n2Q-ZV-fRV"/>
+                            <constraint firstItem="Bsm-4V-e7G" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="236" id="eU2-Bs-3D5"/>
+                            <constraint firstItem="Bsm-4V-e7G" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="68" id="f6B-p5-YhX"/>
+                            <constraint firstItem="rJT-ZE-TU7" firstAttribute="top" secondItem="Bsm-4V-e7G" secondAttribute="bottom" constant="8" symbolic="YES" id="hkX-uR-rzD"/>
+                            <constraint firstItem="Bsm-4V-e7G" firstAttribute="centerX" secondItem="rJT-ZE-TU7" secondAttribute="centerX" id="qko-NH-35G"/>
+                            <constraint firstItem="Bsm-4V-e7G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w0J-7O-m6Y"/>
                         </constraints>
                     </view>
                     <connections>
@@ -73,7 +73,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sh1-8v-2Ka">
-                                <rect key="frame" x="156" y="288" width="37" height="30"/>
+                                <rect key="frame" x="169" y="288" width="37" height="30"/>
                                 <state key="normal" title="Enter"/>
                                 <connections>
                                     <action selector="loginButton:" destination="oHI-2f-r8E" eventType="touchUpInside" id="vot-G2-yG1"/>
@@ -83,11 +83,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Sh1-8v-2Ka" firstAttribute="leading" secondItem="wJh-am-tFQ" secondAttribute="leading" constant="156" id="QcG-X7-nGr"/>
-                            <constraint firstItem="tF7-y0-x8t" firstAttribute="leading" secondItem="wJh-am-tFQ" secondAttribute="leadingMargin" constant="68" id="Sd0-vv-QpI"/>
-                            <constraint firstItem="tF7-y0-x8t" firstAttribute="top" secondItem="GBG-Bo-D1f" secondAttribute="bottom" constant="230" id="V48-9l-Kee"/>
-                            <constraint firstItem="Sh1-8v-2Ka" firstAttribute="top" secondItem="tF7-y0-x8t" secondAttribute="bottom" constant="8" symbolic="YES" id="WtW-VE-OXG"/>
-                            <constraint firstItem="tF7-y0-x8t" firstAttribute="centerX" secondItem="wJh-am-tFQ" secondAttribute="centerX" id="je9-GT-pGa"/>
+                            <constraint firstItem="Sh1-8v-2Ka" firstAttribute="top" secondItem="tF7-y0-x8t" secondAttribute="bottom" constant="8" symbolic="YES" id="0vU-8S-Nyk"/>
+                            <constraint firstItem="tF7-y0-x8t" firstAttribute="top" secondItem="GBG-Bo-D1f" secondAttribute="bottom" constant="230" id="5qT-XN-CfP"/>
+                            <constraint firstItem="tF7-y0-x8t" firstAttribute="centerX" secondItem="wJh-am-tFQ" secondAttribute="centerX" id="DZx-LM-EFs"/>
+                            <constraint firstItem="tF7-y0-x8t" firstAttribute="centerX" secondItem="Sh1-8v-2Ka" secondAttribute="centerX" id="UQn-Ut-RCP"/>
+                            <constraint firstItem="tF7-y0-x8t" firstAttribute="leading" secondItem="wJh-am-tFQ" secondAttribute="leadingMargin" constant="68" id="epx-VR-Baw"/>
                         </constraints>
                     </view>
                     <connections>
