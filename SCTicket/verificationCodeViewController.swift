@@ -29,8 +29,14 @@ class verificationCodeViewController: UIViewController {
         let credential = PhoneAuthProvider.provider().credential(withVerificationID: defaults.string(forKey: "authVerificationID")!, verificationCode: codeText.text!)
         Auth.auth().signIn(with: credential) { (user, error) in
             if error != nil {
+                
+                //invalid authentication
+                let alert = UIAlertController(title: "Error", message: "Invalid Authentication Code", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                self.codeText.text = ""
+
                 print("verification code was entered wrong")
-                return
             } else {
                 let userInfo = user?.providerData[0]
                 self.performSegue(withIdentifier: "newPhoneNumberCreated", sender: Any?.self)
