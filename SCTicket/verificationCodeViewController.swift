@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseAuthUI
 import FirebasePhoneAuthUI
+import FirebaseDatabase
 
 class verificationCodeViewController: UIViewController {
 

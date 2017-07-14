@@ -25,7 +25,7 @@ class enterPhoneNumberViewController: UIViewController {
 
     @IBAction func sendCodeButton(_ sender: Any) {
         PhoneAuthProvider.provider().verifyPhoneNumber(self.phonenumberText.text!) { (verificationID, error ) in
-            if error != nil {
+            if error != nil { //entered invalid phone number
                 //
                 //send an error and clear the phone number field
                 //
@@ -35,15 +35,33 @@ class enterPhoneNumberViewController: UIViewController {
                 self.phonenumberText.text = ""
                 print("Error entering phone number \n \n ")
             } else {
+                
+                /*
+                 //valid phone number, write to database and send to the next screen
+                */
+                
                 let defaults = UserDefaults.standard
                 defaults.setValue(verificationID, forKey: "authVerificationID")
-                //if phone number already exists in database
-                //perform segue to the logged in page
-                
-                //else send verification code
-                self.performSegue(withIdentifier: "sendVerificationCode", sender: Any?.self)
+                guard let firUser = Auth.auth().currentUser,
+                    let phoneNumber = self.phonenumberText.text,
+                    !phoneNumber.isEmpty else { return }
+                let userAttrs = ["phoneNumber": phoneNumber]
+                let ref = Database.database().reference().child("users").child(firUser.uid)
+                ref.setValue(userAttrs) { (error, ref) in
+                    if let error = error {
+                        assertionFailure(error.localizedDescription)
+                        return
+                    }
+                    ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                        let user = User(snapshot: snapshot)
+                        // handle newly created user here
+                        self.performSegue(withIdentifier: "sendVerificationCode", sender: Any?.self)
+                    })
+                }
             }
         }
+        
+        
     }
 
     
