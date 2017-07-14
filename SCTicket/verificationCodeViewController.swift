@@ -29,11 +29,11 @@ class verificationCodeViewController: UIViewController {
         let credential = PhoneAuthProvider.provider().credential(withVerificationID: defaults.string(forKey: "authVerificationID")!, verificationCode: codeText.text!)
         Auth.auth().signIn(with: credential) { (user, error) in
             if error != nil {
-                assertionFailure("Error signing in: \(String(describing: error?.localizedDescription))")
+                print("verification code was entered wrong")
                 return
             } else {
                 let userInfo = user?.providerData[0]
-                self.performSegue(withIdentifier: "logged", sender: Any?.self)
+                self.performSegue(withIdentifier: "newPhoneNumberCreated", sender: Any?.self)
             }
         }
         

@@ -27,7 +27,6 @@
                                 <state key="normal" title="Send Code"/>
                                 <connections>
                                     <action selector="sendCodeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IYw-1O-uQi"/>
-                                    <segue destination="oHI-2f-r8E" kind="show" identifier="code" id="M60-KR-Uih"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bsm-4V-e7G">
@@ -48,6 +47,8 @@
                     </view>
                     <connections>
                         <outlet property="phonenumberText" destination="Bsm-4V-e7G" id="Gwj-9t-W4y"/>
+                        <segue destination="oHI-2f-r8E" kind="show" identifier="sendVerificationCode" id="9fK-jt-L5Z"/>
+                        <segue destination="CYq-l1-R1P" kind="show" identifier="phoneNumberExists" id="eqa-dL-p7C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -77,7 +78,6 @@
                                 <state key="normal" title="Enter"/>
                                 <connections>
                                     <action selector="loginButton:" destination="oHI-2f-r8E" eventType="touchUpInside" id="vot-G2-yG1"/>
-                                    <segue destination="CYq-l1-R1P" kind="show" identifier="logged" id="4YC-SG-Q32"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -92,11 +92,12 @@
                     </view>
                     <connections>
                         <outlet property="codeText" destination="tF7-y0-x8t" id="kWe-XO-P3A"/>
+                        <segue destination="CYq-l1-R1P" kind="show" identifier="newPhoneNumberCreated" id="4aW-Bc-I0w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DIH-11-QZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="984.79999999999995" y="138.98050974512745"/>
+            <point key="canvasLocation" x="940" y="612"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="sDO-5T-w8s">
@@ -127,7 +128,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYB-Lg-G2H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1760.8" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1730" y="163"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="eqa-dL-p7C"/>
+    </inferredMetricsTieBreakers>
 </document>
