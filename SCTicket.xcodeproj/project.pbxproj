@@ -8,20 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		6DCC6EB71F17F8C300493BC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCC6EB61F17F8C300493BC1 /* AppDelegate.swift */; };
-		6DCC6EB91F17F8C300493BC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCC6EB81F17F8C300493BC1 /* ViewController.swift */; };
 		6DCC6EBC1F17F8C300493BC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DCC6EBA1F17F8C300493BC1 /* Main.storyboard */; };
 		6DCC6EBE1F17F8C300493BC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DCC6EBD1F17F8C300493BC1 /* Assets.xcassets */; };
 		6DCC6EC11F17F8C300493BC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DCC6EBF1F17F8C300493BC1 /* LaunchScreen.storyboard */; };
+		6DCC6ECA1F17FA8F00493BC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DCC6EC91F17FA8F00493BC1 /* GoogleService-Info.plist */; };
+		6DCC6ECE1F1820B200493BC1 /* verificationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCC6ECD1F1820B200493BC1 /* verificationCodeViewController.swift */; };
+		6DCC6ED01F18219C00493BC1 /* enterPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCC6ECF1F18219C00493BC1 /* enterPhoneNumberViewController.swift */; };
+		AEA46E643C7B16C631ED4B4C /* Pods_SCTicket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B752B3A3B452DEFA339D6E99 /* Pods_SCTicket.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12F4F282436B91C02E0F688E /* Pods-SCTicket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCTicket.release.xcconfig"; path = "Pods/Target Support Files/Pods-SCTicket/Pods-SCTicket.release.xcconfig"; sourceTree = "<group>"; };
 		6DCC6EB31F17F8C300493BC1 /* SCTicket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCTicket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DCC6EB61F17F8C300493BC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6DCC6EB81F17F8C300493BC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6DCC6EBB1F17F8C300493BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6DCC6EBD1F17F8C300493BC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6DCC6EC01F17F8C300493BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DCC6EC21F17F8C300493BC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DCC6EC81F17F99600493BC1 /* SCTicket.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SCTicket.entitlements; sourceTree = "<group>"; };
+		6DCC6EC91F17FA8F00493BC1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6DCC6ECD1F1820B200493BC1 /* verificationCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = verificationCodeViewController.swift; sourceTree = "<group>"; };
+		6DCC6ECF1F18219C00493BC1 /* enterPhoneNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enterPhoneNumberViewController.swift; sourceTree = "<group>"; };
+		B752B3A3B452DEFA339D6E99 /* Pods_SCTicket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCTicket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF0E1B0C62943071EA9684F5 /* Pods-SCTicket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCTicket.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SCTicket/Pods-SCTicket.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEA46E643C7B16C631ED4B4C /* Pods_SCTicket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +50,8 @@
 			children = (
 				6DCC6EB51F17F8C300493BC1 /* SCTicket */,
 				6DCC6EB41F17F8C300493BC1 /* Products */,
+				EC059239AFAA306E85D677DC /* Pods */,
+				8A4A0B855B585A24437B3022 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +66,34 @@
 		6DCC6EB51F17F8C300493BC1 /* SCTicket */ = {
 			isa = PBXGroup;
 			children = (
+				6DCC6EC81F17F99600493BC1 /* SCTicket.entitlements */,
 				6DCC6EB61F17F8C300493BC1 /* AppDelegate.swift */,
-				6DCC6EB81F17F8C300493BC1 /* ViewController.swift */,
 				6DCC6EBA1F17F8C300493BC1 /* Main.storyboard */,
+				6DCC6ECD1F1820B200493BC1 /* verificationCodeViewController.swift */,
+				6DCC6ECF1F18219C00493BC1 /* enterPhoneNumberViewController.swift */,
 				6DCC6EBD1F17F8C300493BC1 /* Assets.xcassets */,
 				6DCC6EBF1F17F8C300493BC1 /* LaunchScreen.storyboard */,
 				6DCC6EC21F17F8C300493BC1 /* Info.plist */,
+				6DCC6EC91F17FA8F00493BC1 /* GoogleService-Info.plist */,
 			);
 			path = SCTicket;
+			sourceTree = "<group>";
+		};
+		8A4A0B855B585A24437B3022 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B752B3A3B452DEFA339D6E99 /* Pods_SCTicket.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC059239AFAA306E85D677DC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF0E1B0C62943071EA9684F5 /* Pods-SCTicket.debug.xcconfig */,
+				12F4F282436B91C02E0F688E /* Pods-SCTicket.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +103,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6DCC6EC51F17F8C300493BC1 /* Build configuration list for PBXNativeTarget "SCTicket" */;
 			buildPhases = (
+				E6A64782467D1445F48054CE /* [CP] Check Pods Manifest.lock */,
 				6DCC6EAF1F17F8C300493BC1 /* Sources */,
 				6DCC6EB01F17F8C300493BC1 /* Frameworks */,
 				6DCC6EB11F17F8C300493BC1 /* Resources */,
+				850B402FE1B331C1D9739D52 /* [CP] Embed Pods Frameworks */,
+				9695E6A88E0D7DE81AE5794F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -98,6 +133,14 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = X2UYT949HS;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -124,6 +167,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DCC6ECA1F17FA8F00493BC1 /* GoogleService-Info.plist in Resources */,
 				6DCC6EC11F17F8C300493BC1 /* LaunchScreen.storyboard in Resources */,
 				6DCC6EBE1F17F8C300493BC1 /* Assets.xcassets in Resources */,
 				6DCC6EBC1F17F8C300493BC1 /* Main.storyboard in Resources */,
@@ -132,13 +176,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		850B402FE1B331C1D9739D52 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SCTicket/Pods-SCTicket-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9695E6A88E0D7DE81AE5794F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SCTicket/Pods-SCTicket-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6A64782467D1445F48054CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6DCC6EAF1F17F8C300493BC1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DCC6EB91F17F8C300493BC1 /* ViewController.swift in Sources */,
+				6DCC6ECE1F1820B200493BC1 /* verificationCodeViewController.swift in Sources */,
 				6DCC6EB71F17F8C300493BC1 /* AppDelegate.swift in Sources */,
+				6DCC6ED01F18219C00493BC1 /* enterPhoneNumberViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,12 +352,14 @@
 		};
 		6DCC6EC61F17F8C300493BC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF0E1B0C62943071EA9684F5 /* Pods-SCTicket.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SCTicket/SCTicket.entitlements;
 				DEVELOPMENT_TEAM = X2UYT949HS;
 				INFOPLIST_FILE = SCTicket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.SahilAgarwal.SCTicket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SahilAgarwal.SCTicket1234593734584y5285;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -272,12 +367,14 @@
 		};
 		6DCC6EC71F17F8C300493BC1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12F4F282436B91C02E0F688E /* Pods-SCTicket.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SCTicket/SCTicket.entitlements;
 				DEVELOPMENT_TEAM = X2UYT949HS;
 				INFOPLIST_FILE = SCTicket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.SahilAgarwal.SCTicket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SahilAgarwal.SCTicket1234593734584y5285;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -302,6 +399,7 @@
 				6DCC6EC71F17F8C300493BC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
