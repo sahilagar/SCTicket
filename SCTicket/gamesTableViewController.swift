@@ -79,8 +79,9 @@ class gamesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "gameSelected", sender: self)
         self.titleToSend = games[indexPath.row]
+        self.performSegue(withIdentifier: "gameSelected", sender: self)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
