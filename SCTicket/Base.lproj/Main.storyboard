@@ -57,7 +57,6 @@
                     <connections>
                         <outlet property="phonenumberText" destination="Bsm-4V-e7G" id="Gwj-9t-W4y"/>
                         <segue destination="oHI-2f-r8E" kind="show" identifier="sendVerificationCode" id="9fK-jt-L5Z"/>
-                        <segue destination="CYq-l1-R1P" kind="show" identifier="phoneNumberExists" id="eqa-dL-p7C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -114,46 +113,20 @@
                     </view>
                     <connections>
                         <outlet property="codeText" destination="tF7-y0-x8t" id="kWe-XO-P3A"/>
-                        <segue destination="CYq-l1-R1P" kind="show" identifier="newPhoneNumberCreated" id="4aW-Bc-I0w"/>
+                        <segue destination="D5d-sf-NuH" kind="show" identifier="newPhoneNumberCreated" id="4aW-Bc-I0w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DIH-11-QZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="940" y="611.24437781109452"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="sDO-5T-w8s">
+        <!--Games-->
+        <scene sceneID="khh-9D-HVo">
             <objects>
-                <viewController id="CYq-l1-R1P" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="W3m-Fy-nth"/>
-                        <viewControllerLayoutGuide type="bottom" id="p2D-9p-1mw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Fpm-nP-eg1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged in!!!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmy-wi-EPk">
-                                <rect key="frame" x="106" y="280" width="163" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="dmy-wi-EPk" firstAttribute="centerX" secondItem="Fpm-nP-eg1" secondAttribute="centerX" id="Ep1-fi-mog"/>
-                            <constraint firstItem="dmy-wi-EPk" firstAttribute="top" secondItem="W3m-Fy-nth" secondAttribute="bottom" constant="260" id="RA6-DN-96j"/>
-                            <constraint firstItem="dmy-wi-EPk" firstAttribute="leading" secondItem="Fpm-nP-eg1" secondAttribute="leadingMargin" constant="90" id="mJC-Jx-a2P"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qYB-Lg-G2H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Games" id="D5d-sf-NuH" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cmK-Sq-eQj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1730" y="163"/>
+            <point key="canvasLocation" x="1728.8" y="162.3688155922039"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="eqa-dL-p7C"/>
-    </inferredMetricsTieBreakers>
 </document>

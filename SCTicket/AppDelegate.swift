@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -31,6 +32,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UIApplication.shared.registerUserNotificationSettings(notificationSettings)
             UIApplication.shared.registerForRemoteNotifications()
         }
+        
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if let user = user {
+                // User is signed in.
+                let storyboard = UIStoryboard(name: "Games", bundle: nil)
+                if let initialViewController = storyboard.instantiateInitialViewController() {
+                    self.window?.rootViewController = initialViewController
+                    self.window?.makeKeyAndVisible()
+                    
+                } //else the user is not signed in
+            }
+        }
+        
         return true
     }
 

@@ -13,7 +13,7 @@ import FirebaseDatabase
 
 typealias FIRUser = FirebaseAuth.User
 
-class enterPhoneNumberViewController: UIViewController {
+class enterPhoneNumberViewController: UIViewController, UITableViewDelegate{
 
     @IBOutlet weak var phonenumberText: UITextField!
     
