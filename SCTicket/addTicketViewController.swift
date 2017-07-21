@@ -25,7 +25,7 @@ class addTicketViewController: UIViewController {
 //        self.navigationController?.setNavigationBarHidden(true, animated: true)
 
         // Do any additional setup after loading the view.
-        self.hideKeyboard()
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     
     override func didReceiveMemoryWarning() {

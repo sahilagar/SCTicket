@@ -7,36 +7,52 @@
 //
 
 import UIKit
+import Firebase
 
 class allTicketsTableViewController: UITableViewController {
     
-
+    var ref = Database.database().reference().child("requests")
+    var requests = [Request]()
+    
+    //string that displays at the top of the controller
     var currentGame = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        
+        //self.allTicketsTableViewController.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        //populate requests array
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            var allRequests = [Request]()
+            for item in snapshot.children {
+                let tempSnapshot = item as! DataSnapshot
+                let singleRequest = Request(snapshot: tempSnapshot)
+                if singleRequest?.gamePostedIn == self.currentGame {
+                    allRequests.append(singleRequest!)
+                }
+            }
+            self.requests = allRequests
+            self.tableView.reloadData()
+        })
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return requests.count
     }
 
     //send the game posted in to the add ticket view controller
@@ -48,11 +64,9 @@ class allTicketsTableViewController: UITableViewController {
     }
     
     @IBAction func unwindToGameTicketsViewController(_ segue: UIStoryboardSegue) {
-        
-        // for now, simply defining the method is sufficient.
-        // we'll add code later
-        
+        // for now, simply defining the method is sufficient.        
     }
+    
     
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

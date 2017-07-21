@@ -19,16 +19,16 @@ class verificationCodeViewController: UIViewController {
     @IBOutlet weak var codeText: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.hideKeyboard()
 
-        // Do any additional setup after loading the view.
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
 
     
     @IBAction func loginButton(_ sender: Any) {
+        //close keyboar
+        codeText.resignFirstResponder()
         
-        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         //phone number verification
         let defaults = UserDefaults.standard
         let credential = PhoneAuthProvider.provider().credential(withVerificationID: defaults.string(forKey: "authVerificationID")!, verificationCode: codeText.text!)
@@ -43,7 +43,7 @@ class verificationCodeViewController: UIViewController {
 
                 print("verification code was entered wrong")
             } else {
-                
+                self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
                 let phoneNumber = self.phoneNumberText
                 
                 guard let firUser = Auth.auth().currentUser else {
@@ -68,28 +68,12 @@ class verificationCodeViewController: UIViewController {
             }
         }
         
-        
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+}
 
-}
-extension UIViewController
-{
-    func hideKeyboard()
-    {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(UIViewController.dismissKeyboard))
-        
-        view.addGestureRecognizer(tap)
-    }
-    
-    func dismissKeyboard()
-    {
-        view.endEditing(true)
-    }
-}

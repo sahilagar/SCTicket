@@ -9,20 +9,22 @@
 import Foundation
 import FirebaseDatabase.FIRDataSnapshot
 
-class Ticket {
+class Request {
     
     let postID: String
     let price: Double
     let tryingToBuy: Bool
     let gamePostedIn: String
     let description: String
+    let belongsToUser: String
     
-    init(postID: String, price: Double, tryingToBuy: Bool, gamePostedIn:String, description: String) {
+    init(postID: String, price: Double, tryingToBuy: Bool, gamePostedIn:String, description: String, belongsToUser: String) {
         self.postID = postID
         self.price = price
         self.tryingToBuy = tryingToBuy
         self.gamePostedIn = gamePostedIn
         self.description = description
+        self.belongsToUser = belongsToUser
     }
 
     init?(snapshot: DataSnapshot) {
@@ -30,7 +32,8 @@ class Ticket {
             let price = dict["price"] as? Double,
             let tryingToBuy = dict["tryingToBuy"] as? Bool,
             let gamePostedIn = dict["gamePostedIn"] as? String,
-            let description = dict["description"] as? String
+            let description = dict["description"] as? String,
+            let belongsToUser = dict["belongsToUser"] as? String
         else {return nil}
         
         self.postID = snapshot.key
@@ -38,6 +41,7 @@ class Ticket {
         self.tryingToBuy = tryingToBuy
         self.gamePostedIn = gamePostedIn
         self.description = description
+        self.belongsToUser = belongsToUser
         
     }
 }

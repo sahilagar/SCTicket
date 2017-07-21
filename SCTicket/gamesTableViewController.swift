@@ -21,7 +21,7 @@ class gamesTableViewController: UITableViewController {
         super.viewDidLoad()
         self.gamesTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-        //populate games table view cell
+        //populate games array
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             var tempGames = [String]()
             for item in snapshot.children {
@@ -33,7 +33,6 @@ class gamesTableViewController: UITableViewController {
             self.games = tempGames
             self.tableView.reloadData()
         })
-        
     }
     @IBOutlet var gamesTableView: UITableView! {
         didSet {
@@ -145,3 +144,4 @@ class gamesTableViewController: UITableViewController {
      */
     
 }
+
