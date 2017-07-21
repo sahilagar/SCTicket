@@ -13,11 +13,13 @@ class User {
     
     let uid: String
     let phoneNumber: String
+    let requests: [String] = []
     
     
     init(uid: String, phoneNumber: String) {
         self.uid = uid
-        self.phoneNumber = phoneNumber    }
+        self.phoneNumber = phoneNumber
+    }
     
     init?(snapshot: DataSnapshot) {
         guard let dict = snapshot.value as? [String : Any],

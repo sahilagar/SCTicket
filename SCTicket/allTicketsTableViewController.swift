@@ -11,6 +11,7 @@ import UIKit
 class allTicketsTableViewController: UITableViewController {
     
 
+    var currentGame = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
@@ -38,6 +39,21 @@ class allTicketsTableViewController: UITableViewController {
         return 0
     }
 
+    //send the game posted in to the add ticket view controller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addTicket" {
+            let allTicketsTableViewController = segue.destination as! addTicketViewController
+            allTicketsTableViewController.gamePostedIn = currentGame
+        }
+    }
+    
+    @IBAction func unwindToGameTicketsViewController(_ segue: UIStoryboardSegue) {
+        
+        // for now, simply defining the method is sufficient.
+        // we'll add code later
+        
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

@@ -13,10 +13,14 @@ import FirebasePhoneAuthUI
 import FirebaseDatabase
 
 class verificationCodeViewController: UIViewController {
+    
+    var phoneNumberText = ""
 
     @IBOutlet weak var codeText: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.hideKeyboard()
 
         // Do any additional setup after loading the view.
     }
@@ -39,8 +43,28 @@ class verificationCodeViewController: UIViewController {
 
                 print("verification code was entered wrong")
             } else {
-                let userInfo = user?.providerData[0]
-                self.performSegue(withIdentifier: "newPhoneNumberCreated", sender: Any?.self)
+                
+                let phoneNumber = self.phoneNumberText
+                
+                guard let firUser = Auth.auth().currentUser else {
+                    print ("returning here")
+                    return
+                }
+                let userAttrs = ["phoneNumber": phoneNumber]
+                let ref = Database.database().reference().child("users").child(firUser.uid)
+                ref.setValue(userAttrs) { (error, ref) in
+                    if let error = error {
+                        assertionFailure(error.localizedDescription)
+                        return
+                    }
+                    ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                        let user = User(snapshot: snapshot)
+                        //segues through app delegate
+                        
+                    })
+                }
+                
+                
             }
         }
         
@@ -52,4 +76,20 @@ class verificationCodeViewController: UIViewController {
     }
 
 
+}
+extension UIViewController
+{
+    func hideKeyboard()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(UIViewController.dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
 }

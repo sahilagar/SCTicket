@@ -33,15 +33,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UIApplication.shared.registerForRemoteNotifications()
         }
         
+        //if user is currently logged in on phone or not, open the correct screen
         Auth.auth().addStateDidChangeListener { auth, user in
             if let user = user {
                 // User is signed in.
+                print("2")
                 let storyboard = UIStoryboard(name: "Games", bundle: nil)
                 if let initialViewController = storyboard.instantiateInitialViewController() {
                     self.window?.rootViewController = initialViewController
                     self.window?.makeKeyAndVisible()
                     
-                } //else the user is not signed in
+                }
+                else { //else the user is not signed in
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    if let initialViewController = storyboard.instantiateInitialViewController() {
+                        self.window?.rootViewController = initialViewController
+                        self.window?.makeKeyAndVisible()
+                    }
+                }
             }
         }
         

@@ -13,20 +13,16 @@ import FirebaseDatabase
 
 class gamesTableViewController: UITableViewController {
     
-    // your firebase reference as a property
     var ref = Database.database().reference().child("games")
-    // your data source, you can replace this with your own model if you wish
     var games = [String]()
     var titleToSend = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.gamesTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
         
         //populate games table view cell
-        ref.observe(.value, with: { (snapshot) in
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
             var tempGames = [String]()
             for item in snapshot.children {
                 let snap = item as! DataSnapshot
@@ -37,7 +33,6 @@ class gamesTableViewController: UITableViewController {
             self.games = tempGames
             self.tableView.reloadData()
         })
-        
         
     }
     @IBOutlet var gamesTableView: UITableView! {
@@ -52,6 +47,17 @@ class gamesTableViewController: UITableViewController {
         // listen for update with the .Value event
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.resignFirstResponder()
+    }
+    
+    @IBAction func signOutButton(_ sender: Any) {
+        try! Auth.auth().signOut()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "enterPhoneNumberViewController")
+        self.present(vc, animated: false, completion: nil)
+    }
     
     
     override func didReceiveMemoryWarning() {
@@ -88,6 +94,7 @@ class gamesTableViewController: UITableViewController {
         if segue.identifier == "gameSelected" {
             let allTicketsTableViewController = segue.destination as! allTicketsTableViewController
             allTicketsTableViewController.title = titleToSend
+            allTicketsTableViewController.currentGame = titleToSend
         }
         
     }

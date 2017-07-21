@@ -13,7 +13,7 @@
         <!--Enter Phone Number View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="enterPhoneNumberViewController" customModule="SCTicket" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="enterPhoneNumberViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="enterPhoneNumberViewController" customModule="SCTicket" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -61,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="-436" y="611"/>
         </scene>
         <!--Verification Code View Controller-->
         <scene sceneID="j9m-cC-wYr">

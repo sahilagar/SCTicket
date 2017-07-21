@@ -19,8 +19,6 @@ class enterPhoneNumberViewController: UIViewController, UITableViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }   
 
     @IBAction func sendCodeButton(_ sender: Any) {
@@ -33,35 +31,26 @@ class enterPhoneNumberViewController: UIViewController, UITableViewDelegate{
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 self.phonenumberText.text = ""
-                print("Error entering phone number \n \n ")
             } else {
                 
                 /*
-                 //valid phone number, write to database and send to the next screen
+                 //valid phone number send to the next screen
                 */
                 
                 let defaults = UserDefaults.standard
                 defaults.setValue(verificationID, forKey: "authVerificationID")
-                guard let firUser = Auth.auth().currentUser,
-                    let phoneNumber = self.phonenumberText.text,
-                    !phoneNumber.isEmpty else { return }
-                let userAttrs = ["phoneNumber": phoneNumber]
-                let ref = Database.database().reference().child("users").child(firUser.uid)
-                ref.setValue(userAttrs) { (error, ref) in
-                    if let error = error {
-                        assertionFailure(error.localizedDescription)
-                        return
-                    }
-                    ref.observeSingleEvent(of: .value, with: { (snapshot) in
-                        let user = User(snapshot: snapshot)
-                        // handle newly created user here
-                        self.performSegue(withIdentifier: "sendVerificationCode", sender: Any?.self)
-                    })
-                }
+                self.performSegue(withIdentifier: "sendVerificationCode", sender: Any?.self)
             }
         }
         
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sendVerificationCode" {
+            let allTicketsTableViewController = segue.destination as! verificationCodeViewController
+            allTicketsTableViewController.phoneNumberText = phonenumberText.text!
+        }
     }
 
     
