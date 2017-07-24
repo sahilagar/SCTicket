@@ -21,6 +21,11 @@ class allTicketsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        //refreshes when pull down
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(self.refresh), for: UIControlEvents.valueChanged)
+        tableView.addSubview(refreshControl!)
 
         
         //populate requests array
@@ -38,6 +43,23 @@ class allTicketsTableViewController: UITableViewController {
         })
 
         
+    }
+    
+    //refreshes when pull down
+    func refresh(sender:AnyObject) {
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            var allRequests = [Request]()
+            for item in snapshot.children {
+                let tempSnapshot = item as! DataSnapshot
+                let singleRequest = Request(snapshot: tempSnapshot)
+                if singleRequest?.gamePostedIn == self.currentGame {
+                    allRequests.append(singleRequest!)
+                }
+            }
+            self.requests = allRequests
+            self.tableView.reloadData()
+        })
+        refreshControl?.endRefreshing()
     }
 
     override func didReceiveMemoryWarning() {
