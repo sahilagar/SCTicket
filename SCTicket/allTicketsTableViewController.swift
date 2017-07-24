@@ -20,7 +20,8 @@ class allTicketsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.allTicketsTableViewController.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+
         
         //populate requests array
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -68,15 +69,21 @@ class allTicketsTableViewController: UITableViewController {
     }
     
     
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "request", for: indexPath) as! requestTableViewCell
 
-        // Configure the cell...
+        let curr = requests[indexPath.row]
+        
+        if curr.tryingToBuy == false {
+            cell.buyingOrSellingLabel.text = "Wants to sell"
+        } else {
+            cell.buyingOrSellingLabel.text = "Wants to buy"
+        }
 
+        cell.priceLabel.text = String(curr.price)
+        cell.descriptionLabel.text = curr.description
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
