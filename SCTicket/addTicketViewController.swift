@@ -14,16 +14,16 @@ class addTicketViewController: UIViewController {
     @IBOutlet weak var buyOrSell: UISegmentedControl!
     
     @IBOutlet weak var priceEntered: UITextField!
-
+    
     @IBOutlet weak var enteredDescription: UITextField!
     
     var gamePostedIn = ""
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        //hide navigation bar
-//        self.navigationController?.setNavigationBarHidden(true, animated: true)
-
+        //        //hide navigation bar
+        //        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
         // Do any additional setup after loading the view.
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
@@ -39,32 +39,50 @@ class addTicketViewController: UIViewController {
                 print("Cancel button tapped")
             } else if identifier == "save" {
                 /*
-                // add ticket to database
-                */
+                 // add ticket to database
+                 */
                 let userID = Auth.auth().currentUser!.uid
-                var tryingToBuy = false
-                if buyOrSell.selectedSegmentIndex == 0 {
-                    tryingToBuy = true
-                }
-                let requestAttrs = ["price": Double(priceEntered.text!) ?? 0,
-                                    "tryingToBuy" : tryingToBuy,
-                                    "gamePostedIn": gamePostedIn,
-                                    "description": enteredDescription.text!,
-                                    "belongsToUser" : userID] as [String : Any]
-                let ref = Database.database().reference().child("requests").childByAutoId()
-                ref.setValue(requestAttrs) { (error, ref) in
-                    if let error = error {
-                        assertionFailure(error.localizedDescription)
-                        return
-                    }
-                    ref.observeSingleEvent(of: .value, with: { (snapshot) in
-                        self.performSegue(withIdentifier: "save", sender: Any?.self)
-                        
-                    })
-                }
+                let userPhoneNumberReference = Database.database().reference().child("users").child(Auth.auth().currentUser!.uid)
+                var userPhoneNumber: String = ""
                 
+                var dispatchGroup = DispatchGroup()
+                
+                dispatchGroup.enter()
+                userPhoneNumberReference.observeSingleEvent(of: .value, with: { (snapshot) in
+                    for item in snapshot.children {
+                        let snap = item as! DataSnapshot
+                        userPhoneNumber = snap.value as! String
+                        print(userPhoneNumber + " in the observe single event")
+                    }
+                   dispatchGroup.leave()
+                })
+                
+                //print(userPhoneNumber)
+                
+                dispatchGroup.notify(queue: .main, execute: { 
+                    var tryingToBuy = false
+                    if self.buyOrSell.selectedSegmentIndex == 0 {
+                        tryingToBuy = true
+                    }
+                    let requestAttrs = ["price": Double(self.priceEntered.text!) ?? 0,
+                                        "tryingToBuy" : tryingToBuy,
+                                        "gamePostedIn": self.gamePostedIn,
+                                        "description": self.enteredDescription.text!,
+                                        "belongsToUser" : userID,
+                                        "belongsToPhoneNumber": userPhoneNumber] as [String : Any]
+                    let ref = Database.database().reference().child("requests").childByAutoId()
+                    ref.setValue(requestAttrs) { (error, ref) in
+                        if let error = error {
+                            assertionFailure(error.localizedDescription)
+                            return
+                        }
+                        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                            self.performSegue(withIdentifier: "save", sender: Any?.self)
+                            
+                        })
+                    }
+                })
             }
         }
     }
-    
 }

@@ -17,14 +17,16 @@ class Request {
     let gamePostedIn: String
     let description: String
     let belongsToUser: String
+    let belongsToPhoneNumber: String
     
-    init(postID: String, price: Double, tryingToBuy: Bool, gamePostedIn:String, description: String, belongsToUser: String) {
+    init(postID: String, price: Double, tryingToBuy: Bool, gamePostedIn:String, description: String, belongsToUser: String, belongsToPhoneNumber: String) {
         self.postID = postID
         self.price = price
         self.tryingToBuy = tryingToBuy
         self.gamePostedIn = gamePostedIn
         self.description = description
         self.belongsToUser = belongsToUser
+        self.belongsToPhoneNumber = belongsToPhoneNumber
     }
 
     init?(snapshot: DataSnapshot) {
@@ -33,7 +35,8 @@ class Request {
             let tryingToBuy = dict["tryingToBuy"] as? Bool,
             let gamePostedIn = dict["gamePostedIn"] as? String,
             let description = dict["description"] as? String,
-            let belongsToUser = dict["belongsToUser"] as? String
+            let belongsToUser = dict["belongsToUser"] as? String,
+            let belongsToPhoneNumber = dict["belongsToPhoneNumber"] as? String
         else {return nil}
         
         self.postID = snapshot.key
@@ -42,6 +45,7 @@ class Request {
         self.gamePostedIn = gamePostedIn
         self.description = description
         self.belongsToUser = belongsToUser
+        self.belongsToPhoneNumber = belongsToPhoneNumber
         
     }
 }
