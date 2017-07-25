@@ -45,8 +45,9 @@ class addTicketViewController: UIViewController {
                 let userPhoneNumberReference = Database.database().reference().child("users").child(Auth.auth().currentUser!.uid)
                 var userPhoneNumber: String = ""
                 
-                var dispatchGroup = DispatchGroup()
+                let dispatchGroup = DispatchGroup()
                 
+                //makes the closure run first instead of last
                 dispatchGroup.enter()
                 userPhoneNumberReference.observeSingleEvent(of: .value, with: { (snapshot) in
                     for item in snapshot.children {
@@ -57,8 +58,7 @@ class addTicketViewController: UIViewController {
                    dispatchGroup.leave()
                 })
                 
-                //print(userPhoneNumber)
-                
+                //populates the request and uploads to database
                 dispatchGroup.notify(queue: .main, execute: { 
                     var tryingToBuy = false
                     if self.buyOrSell.selectedSegmentIndex == 0 {

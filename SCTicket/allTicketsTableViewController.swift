@@ -8,8 +8,9 @@
 
 import UIKit
 import Firebase
+import MessageUI
 
-class allTicketsTableViewController: UITableViewController {
+class allTicketsTableViewController: UITableViewController, MFMessageComposeViewControllerDelegate {
     
     var ref = Database.database().reference().child("requests")
     var requests = [Request]()
@@ -104,9 +105,42 @@ class allTicketsTableViewController: UITableViewController {
 
         cell.priceLabel.text = String(curr.price)
         cell.descriptionLabel.text = curr.description
+        
+        //cell.contentView.backgroundColor = UIColor.lightGray
         return cell
     }
 
+    //show messages
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        MFMessageController(index: indexPath.row)
+    }
+    
+    func MFMessageController(index: Int) {
+        if !MFMessageComposeViewController.canSendText() {
+            let alert = UIAlertController(title: "Error", message: "Messages are not supported on this device", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        let composeVC = MFMessageComposeViewController()
+        composeVC.messageComposeDelegate = self
+        
+        // Configure the fields of the interface.
+        composeVC.recipients = [requests[index].belongsToPhoneNumber]
+        composeVC.body = "Hello from California!"
+        
+        // Present the view controller modally.
+        self.present(composeVC, animated: true, completion: nil)
+        
+    }
+    func messageComposeViewController(_ controller: MFMessageComposeViewController,
+                                      didFinishWith result: MessageComposeResult) {
+        // Check the result or perform other tasks.
+        
+        // Dismiss the message compose view controller.
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
