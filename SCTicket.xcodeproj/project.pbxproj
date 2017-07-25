@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D21BD2F1F27F01900BA53BE /* userRequestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D21BD2E1F27F01900BA53BE /* userRequestsTableViewController.swift */; };
 		6D227AB71F268D3800ECDDFE /* requestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D227AB61F268D3800ECDDFE /* requestTableViewCell.swift */; };
 		6D3652241F1964D400C00388 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3652231F1964D400C00388 /* User.swift */; };
 		6D3652291F1D2B3400C00388 /* Games.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D3652271F1D2B3300C00388 /* Games.storyboard */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		12F4F282436B91C02E0F688E /* Pods-SCTicket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCTicket.release.xcconfig"; path = "Pods/Target Support Files/Pods-SCTicket/Pods-SCTicket.release.xcconfig"; sourceTree = "<group>"; };
+		6D21BD2E1F27F01900BA53BE /* userRequestsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userRequestsTableViewController.swift; sourceTree = "<group>"; };
 		6D227AB61F268D3800ECDDFE /* requestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = requestTableViewCell.swift; sourceTree = "<group>"; };
 		6D3652231F1964D400C00388 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6D3652281F1D2B3300C00388 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Games.storyboard; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				6D3FE9E81F1EB76700FB22FD /* allTicketsTableViewController.swift */,
 				6D3FE9EC1F20175000FB22FD /* addTicketViewController.swift */,
 				6D227AB61F268D3800ECDDFE /* requestTableViewCell.swift */,
+				6D21BD2E1F27F01900BA53BE /* userRequestsTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				6D3652241F1964D400C00388 /* User.swift in Sources */,
 				6D3FE9ED1F20175000FB22FD /* addTicketViewController.swift in Sources */,
 				6DCC6ED01F18219C00493BC1 /* enterPhoneNumberViewController.swift in Sources */,
+				6D21BD2F1F27F01900BA53BE /* userRequestsTableViewController.swift in Sources */,
 				6D3FE9EB1F1FC7C800FB22FD /* Request.swift in Sources */,
 				6D227AB71F268D3800ECDDFE /* requestTableViewCell.swift in Sources */,
 				6D3FE9E91F1EB76700FB22FD /* allTicketsTableViewController.swift in Sources */,

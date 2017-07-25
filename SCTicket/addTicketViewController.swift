@@ -64,10 +64,11 @@ class addTicketViewController: UIViewController {
                     if self.buyOrSell.selectedSegmentIndex == 0 {
                         tryingToBuy = true
                     }
+                    
                     let requestAttrs = ["price": Double(self.priceEntered.text!) ?? 0,
                                         "tryingToBuy" : tryingToBuy,
                                         "gamePostedIn": self.gamePostedIn,
-                                        "description": self.enteredDescription.text!,
+                                        "description": self.enteredDescription.text,
                                         "belongsToUser" : userID,
                                         "belongsToPhoneNumber": userPhoneNumber] as [String : Any]
                     let ref = Database.database().reference().child("requests").childByAutoId()
