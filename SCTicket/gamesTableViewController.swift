@@ -51,11 +51,24 @@ class gamesTableViewController: UITableViewController {
         self.resignFirstResponder()
     }
     
+    //sign out
     @IBAction func signOutButton(_ sender: Any) {
-        try! Auth.auth().signOut()
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "enterPhoneNumberViewController")
-        self.present(vc, animated: false, completion: nil)
+        let alert = UIAlertController(title: "Alert", message: "Are you sure you wish to sign out?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: { action in
+            try! Auth.auth().signOut()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "enterPhoneNumberViewController")
+            self.present(vc, animated: false, completion: nil)
+        }))
+        
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+        
+        
     }
     
     

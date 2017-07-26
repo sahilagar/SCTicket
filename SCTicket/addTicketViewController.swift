@@ -38,6 +38,14 @@ class addTicketViewController: UIViewController {
             if identifier == "cancel" {
                 print("Cancel button tapped")
             } else if identifier == "save" {
+                
+                if self.priceEntered.text == nil || self.priceEntered.text == "" {
+                    let alert = UIAlertController(title: "Error", message: "Please enter a valid price", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    return
+                }
+                
                 /*
                  // add ticket to database
                  */
@@ -64,11 +72,14 @@ class addTicketViewController: UIViewController {
                     if self.buyOrSell.selectedSegmentIndex == 0 {
                         tryingToBuy = true
                     }
-                    
-                    let requestAttrs = ["price": Double(self.priceEntered.text!) ?? 0,
+                    var descriptionText = " "
+                    if self.enteredDescription.text != nil {
+                        descriptionText = self.enteredDescription.text!
+                    }
+                    let requestAttrs = ["price": Double(self.priceEntered.text!) as Any,
                                         "tryingToBuy" : tryingToBuy,
                                         "gamePostedIn": self.gamePostedIn,
-                                        "description": self.enteredDescription.text,
+                                        "description": descriptionText,
                                         "belongsToUser" : userID,
                                         "belongsToPhoneNumber": userPhoneNumber] as [String : Any]
                     let ref = Database.database().reference().child("requests").childByAutoId()
