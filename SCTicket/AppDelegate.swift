@@ -11,7 +11,6 @@ import Firebase
 import FirebaseAuth
 import UserNotifications
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -53,6 +52,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
+        
+        // Status bar white font
+        UINavigationBar.appearance().barTintColor = UIColor(red:0.75, green:0.22, blue:0.17, alpha:1.0)
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        
+        UITabBar.appearance().tintColor = UIColor.white
+        UITabBar.appearance().backgroundColor = UIColor.clear
+        UITabBar.appearance().barTintColor = UIColor(red:0.75, green:0.22, blue:0.17, alpha:1.0)
+        UITabBar.appearance().backgroundImage = UIImage()
+        //UITabBar.appearance().shadowImage = UIImage()
+
         
         return true
     }

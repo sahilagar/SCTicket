@@ -26,6 +26,9 @@ class addTicketViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        
+        priceEntered.attributedPlaceholder = NSAttributedString(string:"Price")
+        enteredDescription.attributedPlaceholder = NSAttributedString(string:"Optional Description")
     }
     
     override func didReceiveMemoryWarning() {
