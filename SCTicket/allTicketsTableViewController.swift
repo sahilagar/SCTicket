@@ -98,9 +98,9 @@ class allTicketsTableViewController: UITableViewController, MFMessageComposeView
         let curr = requests[indexPath.row]
         
         if curr.tryingToBuy == false {
-            cell.buyingOrSellingLabel.text = "Wants to sell"
+            cell.buyingOrSellingLabel.text = "Selling"
         } else {
-            cell.buyingOrSellingLabel.text = "Wants to buy"
+            cell.buyingOrSellingLabel.text = "Buying"
         }
 
         cell.priceLabel.text = String(curr.price)
@@ -127,7 +127,12 @@ class allTicketsTableViewController: UITableViewController, MFMessageComposeView
         
         // Configure the fields of the interface.
         composeVC.recipients = [requests[index].belongsToPhoneNumber]
-        composeVC.body = "Hello from California!"
+        if requests[index].tryingToBuy == true {
+            composeVC.body = "Hey I saw your post in \(requests[index].gamePostedIn) and I have a ticket for you, would you mind sending me your student id?"
+        }
+        else {
+            composeVC.body = "Hey I saw your post in \(requests[index].gamePostedIn) and I would love to buy from you, would you mind sending me your venmo?"
+        }
         
         // Present the view controller modally.
         self.present(composeVC, animated: true, completion: nil)
