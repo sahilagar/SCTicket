@@ -56,7 +56,7 @@ class gamesTableViewController: UITableViewController {
         let alert = UIAlertController(title: "Alert", message: "Are you sure you wish to sign out?", preferredStyle: UIAlertControllerStyle.alert)
         
         // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
         alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: { action in
             try! Auth.auth().signOut()
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

@@ -45,6 +45,20 @@ class allTicketsTableViewController: UITableViewController, MFMessageComposeView
 
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            var allRequests = [Request]()
+            for item in snapshot.children {
+                let tempSnapshot = item as! DataSnapshot
+                let singleRequest = Request(snapshot: tempSnapshot)
+                if singleRequest?.gamePostedIn == self.currentGame {
+                    allRequests.append(singleRequest!)
+                }
+            }
+            self.requests = allRequests
+            self.tableView.reloadData()
+        })
+    }
     
     //refreshes when pull down
     func refresh(sender:AnyObject) {
@@ -103,7 +117,7 @@ class allTicketsTableViewController: UITableViewController, MFMessageComposeView
             cell.buyingOrSellingLabel.text = "Buying"
         }
 
-        cell.priceLabel.text = String(curr.price)
+        cell.priceLabel.text = "$" + String(Int(curr.price))
         cell.descriptionLabel.text = curr.description
         
         //cell.contentView.backgroundColor = UIColor.lightGray

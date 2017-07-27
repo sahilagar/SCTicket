@@ -42,6 +42,24 @@ class userRequestsTableViewController: UITableViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        //populate requests array
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            var allRequests = [Request]()
+            let currUser = Auth.auth().currentUser!.uid
+            for item in snapshot.children {
+                let tempSnapshot = item as! DataSnapshot
+                let singleRequest = Request(snapshot: tempSnapshot)
+                //if uid equals belongsToUser
+                if singleRequest?.belongsToUser == currUser {
+                    allRequests.append(singleRequest!)
+                }
+            }
+            self.requests = allRequests
+            self.tableView.reloadData()
+        })
+    }
+    
     //refreshes when pull down
     func refresh(sender:AnyObject) {
         //populate requests array

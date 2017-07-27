@@ -246,9 +246,7 @@
         <scene sceneID="HzG-2U-aKD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hcL-jc-Ce0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Games" id="YQR-rL-ZzP">
-                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Games" image="Football" id="YQR-rL-ZzP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8vH-Ri-chP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -267,7 +265,7 @@
         <scene sceneID="dUp-Cx-MV8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Beg-n5-Nfs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Requests" id="xEn-Ch-es6"/>
+                    <tabBarItem key="tabBarItem" title="My Requests" image="MyRequest" selectedImage="MyRequest" id="xEn-Ch-es6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gqm-N5-39j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -283,4 +281,8 @@
             <point key="canvasLocation" x="2612" y="1042"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Football" width="25" height="25"/>
+        <image name="MyRequest" width="25" height="25"/>
+    </resources>
 </document>

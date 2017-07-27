@@ -24,7 +24,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJT-ZE-TU7">
                                 <rect key="frame" x="149" y="294" width="76" height="30"/>
-                                <state key="normal" title="Send Code"/>
+                                <state key="normal" title="Send Code">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="sendCodeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IYw-1O-uQi"/>
                                 </connections>
@@ -38,11 +40,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eey-fg-sKV">
                                 <rect key="frame" x="164" y="140" width="47" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.75294117647058822" green="0.22352941176470587" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="eey-fg-sKV" firstAttribute="centerX" secondItem="Bsm-4V-e7G" secondAttribute="centerX" id="7Tc-DL-0Tg"/>
                             <constraint firstItem="Bsm-4V-e7G" firstAttribute="top" secondItem="eey-fg-sKV" secondAttribute="bottom" constant="92" id="JcE-8s-aMp"/>
@@ -83,7 +85,9 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sh1-8v-2Ka">
                                 <rect key="frame" x="183" y="288" width="107" height="30"/>
-                                <state key="normal" title="Enter"/>
+                                <state key="normal" title="Enter">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="loginButton:" destination="oHI-2f-r8E" eventType="touchUpInside" id="vot-G2-yG1"/>
                                 </connections>
@@ -93,13 +97,22 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="91" id="yMG-Dx-9pU"/>
                                 </constraints>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="ghU-MV-XWS"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Verification Code:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCI-TC-qSX">
+                                <rect key="frame" x="119" y="148" width="136" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.75294117647058822" green="0.22352941176470587" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tF7-y0-x8t" firstAttribute="top" secondItem="GBG-Bo-D1f" secondAttribute="bottom" constant="230" id="0Pn-Ko-K7Z"/>
                             <constraint firstItem="tF7-y0-x8t" firstAttribute="leading" secondItem="wJh-am-tFQ" secondAttribute="leadingMargin" constant="68" id="GVb-64-Hmf"/>
