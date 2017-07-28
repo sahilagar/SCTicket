@@ -195,9 +195,10 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rQF-Wv-6GF">
                                 <rect key="frame" x="89" y="90" width="197" height="29"/>
                                 <segments>
-                                    <segment title="buy"/>
-                                    <segment title="sell"/>
+                                    <segment title="buying"/>
+                                    <segment title="selling"/>
                                 </segments>
+                                <color key="tintColor" red="0.75294117650000003" green="0.22352941179999999" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sf7-bb-EBe">
                                 <rect key="frame" x="89" y="164" width="197" height="30"/>

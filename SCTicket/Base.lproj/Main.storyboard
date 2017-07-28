@@ -104,9 +104,8 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="ghU-MV-XWS"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Verification Code:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCI-TC-qSX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verification Code:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCI-TC-qSX">
                                 <rect key="frame" x="119" y="148" width="136" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -115,9 +114,11 @@
                         <color key="backgroundColor" red="0.75294117647058822" green="0.22352941176470587" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tF7-y0-x8t" firstAttribute="top" secondItem="GBG-Bo-D1f" secondAttribute="bottom" constant="230" id="0Pn-Ko-K7Z"/>
+                            <constraint firstItem="XCI-TC-qSX" firstAttribute="centerX" secondItem="tF7-y0-x8t" secondAttribute="centerX" id="4RX-TA-ZCl"/>
                             <constraint firstItem="tF7-y0-x8t" firstAttribute="leading" secondItem="wJh-am-tFQ" secondAttribute="leadingMargin" constant="68" id="GVb-64-Hmf"/>
                             <constraint firstItem="tF7-y0-x8t" firstAttribute="centerX" secondItem="wJh-am-tFQ" secondAttribute="centerX" id="Rdq-jP-MIy"/>
                             <constraint firstItem="DCq-ps-cV7" firstAttribute="top" secondItem="tF7-y0-x8t" secondAttribute="bottom" constant="8" symbolic="YES" id="Sib-iN-dfO"/>
+                            <constraint firstItem="tF7-y0-x8t" firstAttribute="top" secondItem="XCI-TC-qSX" secondAttribute="bottom" constant="81" id="X1m-3g-TWI"/>
                             <constraint firstItem="Sh1-8v-2Ka" firstAttribute="leading" secondItem="DCq-ps-cV7" secondAttribute="trailing" constant="8" symbolic="YES" id="YFO-YR-yrQ"/>
                             <constraint firstItem="tF7-y0-x8t" firstAttribute="trailing" secondItem="Sh1-8v-2Ka" secondAttribute="trailing" id="eix-fC-sEn"/>
                             <constraint firstItem="DCq-ps-cV7" firstAttribute="baseline" secondItem="Sh1-8v-2Ka" secondAttribute="baseline" id="kqF-51-HxS"/>

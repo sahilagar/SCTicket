@@ -142,7 +142,7 @@ class allTicketsTableViewController: UITableViewController, MFMessageComposeView
         // Configure the fields of the interface.
         composeVC.recipients = [requests[index].belongsToPhoneNumber]
         if requests[index].tryingToBuy == true {
-            composeVC.body = "Hey I saw your post in \(requests[index].gamePostedIn) and I have a ticket for you, would you mind sending me your student id?"
+            composeVC.body = "Hey I saw your post in \(requests[index].gamePostedIn) and I would love to sell to you, would you mind sending me your student id?"
         }
         else {
             composeVC.body = "Hey I saw your post in \(requests[index].gamePostedIn) and I would love to buy from you, would you mind sending me your venmo?"
