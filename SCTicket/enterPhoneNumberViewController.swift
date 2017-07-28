@@ -10,10 +10,12 @@ import UIKit
 import FirebaseAuth
 import FirebaseAuthUI
 import FirebaseDatabase
+import NVActivityIndicatorView
 
 typealias FIRUser = FirebaseAuth.User
 
-class enterPhoneNumberViewController: UIViewController, UITableViewDelegate{
+
+class enterPhoneNumberViewController: UIViewController, UITableViewDelegate, {
 
     @IBOutlet weak var phonenumberText: UITextField!
     
