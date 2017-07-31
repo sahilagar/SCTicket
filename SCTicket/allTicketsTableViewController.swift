@@ -45,6 +45,7 @@ class allTicketsTableViewController: UITableViewController, MFMessageComposeView
 
         
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             var allRequests = [Request]()
