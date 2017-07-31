@@ -24,7 +24,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>NVActivityIndicatorView.xcscheme</key>
+		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,7 +47,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3EDFE4052B5DE7D509935AC0774CB135</key>
+		<key>41FA54D12162DAD51D02FC58A2CD5034</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,17 +57,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>AB4F262B7CEBBDC671F5B1160994EAEA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E9BC261C6C2164CF623976EF9603F624</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F8223D6E44F33BF0E4E4BE3506EE9182</key>
 		<dict>
 			<key>primary</key>
 			<true/>

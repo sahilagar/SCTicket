@@ -13,6 +13,6 @@ target 'SCTicket' do
   pod 'Firebase/Storage'
   pod 'FirebaseUI/Phone'
   pod 'Firebase'
-  pod 'NVActivityIndicatorView'
+  pod 'MBProgressHUD'
 
 end

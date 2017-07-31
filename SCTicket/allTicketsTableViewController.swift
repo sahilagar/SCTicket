@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import MessageUI
+import MBProgressHUD
 
 class allTicketsTableViewController: UITableViewController, MFMessageComposeViewControllerDelegate {
     
@@ -126,6 +127,7 @@ class allTicketsTableViewController: UITableViewController, MFMessageComposeView
     
     //show messages
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         MFMessageController(index: indexPath.row)
     }
     
@@ -134,6 +136,7 @@ class allTicketsTableViewController: UITableViewController, MFMessageComposeView
             let alert = UIAlertController(title: "Error", message: "Messages are not supported on this device", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            MBProgressHUD.hide(for: self.view, animated: true)
             return
         }
         let composeVC = MFMessageComposeViewController()
@@ -149,6 +152,7 @@ class allTicketsTableViewController: UITableViewController, MFMessageComposeView
         }
         
         // Present the view controller modally.
+        MBProgressHUD.hide(for: self.view, animated: true)
         self.present(composeVC, animated: true, completion: nil)
         
     }
