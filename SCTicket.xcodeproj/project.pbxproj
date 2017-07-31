@@ -414,6 +414,7 @@
 				CODE_SIGN_ENTITLEMENTS = SCTicket/SCTicket.entitlements;
 				DEVELOPMENT_TEAM = X2UYT949HS;
 				INFOPLIST_FILE = SCTicket/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SahilAgarwal.SCTicket1234593734584y5285;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -429,6 +430,7 @@
 				CODE_SIGN_ENTITLEMENTS = SCTicket/SCTicket.entitlements;
 				DEVELOPMENT_TEAM = X2UYT949HS;
 				INFOPLIST_FILE = SCTicket/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SahilAgarwal.SCTicket1234593734584y5285;
 				PRODUCT_NAME = "$(TARGET_NAME)";

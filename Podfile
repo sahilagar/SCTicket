@@ -6,12 +6,13 @@ target 'SCTicket' do
   use_frameworks!
 
   # Pods for SCTicket
-  pod ‘Firebase/Core’
-  pod ‘Firebase/Auth’
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
   pod 'FirebaseUI/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
-  pod ‘FirebaseUI/Phone’
-  pod ‘Firebase’
+  pod 'FirebaseUI/Phone'
+  pod 'Firebase'
+  pod 'NVActivityIndicatorView'
 
 end
