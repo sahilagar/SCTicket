@@ -42,7 +42,6 @@ class allTicketsTableViewController: UITableViewController, MFMessageComposeView
             self.requests = allRequests
             self.tableView.reloadData()
         })
-
         
     }
     
@@ -124,7 +123,7 @@ class allTicketsTableViewController: UITableViewController, MFMessageComposeView
         //cell.contentView.backgroundColor = UIColor.lightGray
         return cell
     }
-
+    
     //show messages
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         MFMessageController(index: indexPath.row)
