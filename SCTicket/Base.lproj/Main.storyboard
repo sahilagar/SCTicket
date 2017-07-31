@@ -43,12 +43,17 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="m9I-SQ-Kf8">
+                                <rect key="frame" x="169" y="191" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.75294117647058822" green="0.22352941176470587" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="eey-fg-sKV" firstAttribute="centerX" secondItem="Bsm-4V-e7G" secondAttribute="centerX" id="7Tc-DL-0Tg"/>
+                            <constraint firstItem="m9I-SQ-Kf8" firstAttribute="top" secondItem="eey-fg-sKV" secondAttribute="bottom" constant="27" id="HfQ-sy-utc"/>
                             <constraint firstItem="Bsm-4V-e7G" firstAttribute="top" secondItem="eey-fg-sKV" secondAttribute="bottom" constant="92" id="JcE-8s-aMp"/>
                             <constraint firstItem="eey-fg-sKV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="120" id="W4Z-7w-A6S"/>
+                            <constraint firstItem="m9I-SQ-Kf8" firstAttribute="centerX" secondItem="eey-fg-sKV" secondAttribute="centerX" id="cSK-rW-8Uk"/>
                             <constraint firstItem="Bsm-4V-e7G" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="236" id="eU2-Bs-3D5"/>
                             <constraint firstItem="Bsm-4V-e7G" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="68" id="f6B-p5-YhX"/>
                             <constraint firstItem="rJT-ZE-TU7" firstAttribute="top" secondItem="Bsm-4V-e7G" secondAttribute="bottom" constant="8" symbolic="YES" id="hkX-uR-rzD"/>
@@ -57,6 +62,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityindicator" destination="m9I-SQ-Kf8" id="q3s-1w-bZ2"/>
                         <outlet property="phonenumberText" destination="Bsm-4V-e7G" id="Gwj-9t-W4y"/>
                         <segue destination="oHI-2f-r8E" kind="show" identifier="sendVerificationCode" id="9fK-jt-L5Z"/>
                     </connections>
@@ -110,22 +116,28 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="eIc-qh-Wpb">
+                                <rect key="frame" x="169" y="187" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.75294117647058822" green="0.22352941176470587" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tF7-y0-x8t" firstAttribute="top" secondItem="GBG-Bo-D1f" secondAttribute="bottom" constant="230" id="0Pn-Ko-K7Z"/>
                             <constraint firstItem="XCI-TC-qSX" firstAttribute="centerX" secondItem="tF7-y0-x8t" secondAttribute="centerX" id="4RX-TA-ZCl"/>
+                            <constraint firstItem="eIc-qh-Wpb" firstAttribute="centerX" secondItem="XCI-TC-qSX" secondAttribute="centerX" id="9N0-By-06M"/>
                             <constraint firstItem="tF7-y0-x8t" firstAttribute="leading" secondItem="wJh-am-tFQ" secondAttribute="leadingMargin" constant="68" id="GVb-64-Hmf"/>
                             <constraint firstItem="tF7-y0-x8t" firstAttribute="centerX" secondItem="wJh-am-tFQ" secondAttribute="centerX" id="Rdq-jP-MIy"/>
                             <constraint firstItem="DCq-ps-cV7" firstAttribute="top" secondItem="tF7-y0-x8t" secondAttribute="bottom" constant="8" symbolic="YES" id="Sib-iN-dfO"/>
                             <constraint firstItem="tF7-y0-x8t" firstAttribute="top" secondItem="XCI-TC-qSX" secondAttribute="bottom" constant="81" id="X1m-3g-TWI"/>
                             <constraint firstItem="Sh1-8v-2Ka" firstAttribute="leading" secondItem="DCq-ps-cV7" secondAttribute="trailing" constant="8" symbolic="YES" id="YFO-YR-yrQ"/>
                             <constraint firstItem="tF7-y0-x8t" firstAttribute="trailing" secondItem="Sh1-8v-2Ka" secondAttribute="trailing" id="eix-fC-sEn"/>
+                            <constraint firstItem="eIc-qh-Wpb" firstAttribute="top" secondItem="XCI-TC-qSX" secondAttribute="bottom" constant="18" id="fN0-DS-7zU"/>
                             <constraint firstItem="DCq-ps-cV7" firstAttribute="baseline" secondItem="Sh1-8v-2Ka" secondAttribute="baseline" id="kqF-51-HxS"/>
                             <constraint firstItem="tF7-y0-x8t" firstAttribute="leading" secondItem="DCq-ps-cV7" secondAttribute="leading" id="nvg-o0-Ejo"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityindicator" destination="eIc-qh-Wpb" id="KhA-O9-Sgm"/>
                         <outlet property="codeText" destination="tF7-y0-x8t" id="kWe-XO-P3A"/>
                         <segue destination="D5d-sf-NuH" kind="show" identifier="newPhoneNumberCreated" id="4aW-Bc-I0w"/>
                     </connections>

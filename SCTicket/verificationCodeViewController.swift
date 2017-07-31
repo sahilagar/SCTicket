@@ -24,9 +24,12 @@ class verificationCodeViewController: UIViewController {
     }
 
     
+    
+    
     @IBAction func loginButton(_ sender: Any) {
         //close keyboar
         codeText.resignFirstResponder()
+        activityindicator.startAnimating()
         
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         //phone number verification
@@ -39,6 +42,7 @@ class verificationCodeViewController: UIViewController {
                 let alert = UIAlertController(title: "Error", message: "Invalid Authentication Code", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
+                self.activityindicator.stopAnimating()
                 self.codeText.text = ""
 
                 print("verification code was entered wrong")
@@ -50,6 +54,7 @@ class verificationCodeViewController: UIViewController {
                     print ("returning here")
                     return
                 }
+                self.activityindicator.stopAnimating()
                 let userAttrs = ["phoneNumber": phoneNumber]
                 let ref = Database.database().reference().child("users").child(firUser.uid)
                 ref.setValue(userAttrs) { (error, ref) in
@@ -69,6 +74,12 @@ class verificationCodeViewController: UIViewController {
         }
         
     }
+    
+    
+    
+    @IBOutlet weak var activityindicator: UIActivityIndicatorView!
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

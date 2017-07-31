@@ -15,6 +15,8 @@ typealias FIRUser = FirebaseAuth.User
 
 class enterPhoneNumberViewController: UIViewController, UITableViewDelegate{
 
+    
+    @IBOutlet weak var activityindicator: UIActivityIndicatorView!
     @IBOutlet weak var phonenumberText: UITextField!
     
     override func viewDidLoad() {
@@ -24,6 +26,7 @@ class enterPhoneNumberViewController: UIViewController, UITableViewDelegate{
     }
 
     @IBAction func sendCodeButton(_ sender: Any) {
+        activityindicator.startAnimating()
         PhoneAuthProvider.provider().verifyPhoneNumber(self.phonenumberText.text!) { (verificationID, error ) in
             if error != nil { //entered invalid phone number
                 //
@@ -41,6 +44,7 @@ class enterPhoneNumberViewController: UIViewController, UITableViewDelegate{
                 
                 let defaults = UserDefaults.standard
                 defaults.setValue(verificationID, forKey: "authVerificationID")
+                self.activityindicator.stopAnimating()
                 self.performSegue(withIdentifier: "sendVerificationCode", sender: Any?.self)
             }
         }
