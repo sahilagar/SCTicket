@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
-
+import MBProgressHUD
 
 class gamesTableViewController: UITableViewController {
     
@@ -22,6 +22,8 @@ class gamesTableViewController: UITableViewController {
         self.gamesTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         //populate games array
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             var tempGames = [String]()
             for item in snapshot.children {
@@ -31,6 +33,7 @@ class gamesTableViewController: UITableViewController {
                 tempGames.append(singleGame)
             }
             self.games = tempGames
+            MBProgressHUD.hide(for: self.view, animated: true)
             self.tableView.reloadData()
         })
     }

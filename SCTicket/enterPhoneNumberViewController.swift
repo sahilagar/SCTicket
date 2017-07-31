@@ -36,6 +36,7 @@ class enterPhoneNumberViewController: UIViewController, UITableViewDelegate {
                 let alert = UIAlertController(title: "Error", message: "Invalid Phone Number", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
+                self.activityindicator.stopAnimating()
                 self.phonenumberText.text = ""
             } else {
                 

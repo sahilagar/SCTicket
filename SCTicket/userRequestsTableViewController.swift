@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import MBProgressHUD
+
 
 class userRequestsTableViewController: UITableViewController {
     
@@ -24,6 +26,7 @@ class userRequestsTableViewController: UITableViewController {
         refreshControl?.addTarget(self, action: #selector(self.refresh), for: UIControlEvents.valueChanged)
         tableView.addSubview(refreshControl!)
         
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         //populate requests array
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             var allRequests = [Request]()
@@ -36,6 +39,7 @@ class userRequestsTableViewController: UITableViewController {
                     allRequests.append(singleRequest!)
                 }
             }
+            MBProgressHUD.hide(for: self.view, animated: true)
             self.requests = allRequests
             self.tableView.reloadData()
         })
