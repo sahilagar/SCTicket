@@ -206,6 +206,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addTicket" translatesAutoresizingMaskIntoConstraints="NO" id="F6U-2Q-c04">
+                                <rect key="frame" x="67" y="269" width="240" height="246"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="246" id="THg-fF-BAS"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -213,8 +219,11 @@
                             <constraint firstItem="Dn1-iZ-f0R" firstAttribute="top" secondItem="rQF-Wv-6GF" secondAttribute="bottom" constant="8" symbolic="YES" id="6n9-N4-1cn"/>
                             <constraint firstItem="rQF-Wv-6GF" firstAttribute="top" secondItem="gsT-DY-Sg0" secondAttribute="bottom" constant="26" id="7EF-sM-u9u"/>
                             <constraint firstItem="Dn1-iZ-f0R" firstAttribute="trailing" secondItem="Sf7-bb-EBe" secondAttribute="trailing" id="8Sp-nI-AEO"/>
+                            <constraint firstItem="F6U-2Q-c04" firstAttribute="top" secondItem="Sf7-bb-EBe" secondAttribute="bottom" constant="75" id="CZd-vX-VCW"/>
+                            <constraint firstItem="F6U-2Q-c04" firstAttribute="centerX" secondItem="Sf7-bb-EBe" secondAttribute="centerX" id="FhS-Pw-qYl"/>
                             <constraint firstItem="rQF-Wv-6GF" firstAttribute="trailing" secondItem="Dn1-iZ-f0R" secondAttribute="trailing" id="Ktz-OG-vpK"/>
                             <constraint firstItem="Dn1-iZ-f0R" firstAttribute="leading" secondItem="Sf7-bb-EBe" secondAttribute="leading" id="SYI-dX-iYR"/>
+                            <constraint firstItem="F6U-2Q-c04" firstAttribute="leading" secondItem="8B1-58-b5z" secondAttribute="leadingMargin" constant="51" id="UJb-qi-gIP"/>
                             <constraint firstItem="rQF-Wv-6GF" firstAttribute="leading" secondItem="Dn1-iZ-f0R" secondAttribute="leading" id="au1-Og-j86"/>
                             <constraint firstItem="rQF-Wv-6GF" firstAttribute="leading" secondItem="8B1-58-b5z" secondAttribute="leadingMargin" constant="73" id="ekb-nt-IXU"/>
                             <constraint firstItem="rQF-Wv-6GF" firstAttribute="centerX" secondItem="8B1-58-b5z" secondAttribute="centerX" id="fPG-ek-kfV"/>
@@ -285,5 +294,6 @@
     <resources>
         <image name="Football" width="25" height="25"/>
         <image name="MyRequest" width="25" height="25"/>
+        <image name="addTicket" width="256" height="256"/>
     </resources>
 </document>
