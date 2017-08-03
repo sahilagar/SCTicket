@@ -195,8 +195,8 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rQF-Wv-6GF">
                                 <rect key="frame" x="44" y="90" width="287" height="29"/>
                                 <segments>
-                                    <segment title="buying"/>
-                                    <segment title="selling"/>
+                                    <segment title="Buying"/>
+                                    <segment title="Selling"/>
                                 </segments>
                                 <color key="tintColor" red="0.75294117650000003" green="0.22352941179999999" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
