@@ -43,6 +43,8 @@ class userRequestsTableViewController: UITableViewController {
             self.requests = allRequests
             self.tableView.reloadData()
         })
+        let imageView = UIImageView(image: UIImage(named: "Background"))
+        self.tableView.backgroundView = imageView
         
     }
     

@@ -46,6 +46,8 @@ class allTicketsTableViewController: UITableViewController, MFMessageComposeView
             self.tableView.reloadData()
         })
         
+        let imageView = UIImageView(image: UIImage(named: "Background"))
+        self.tableView.backgroundView = imageView
     }
     
     override func viewWillAppear(_ animated: Bool) {
