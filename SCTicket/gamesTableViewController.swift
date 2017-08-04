@@ -56,7 +56,7 @@ class gamesTableViewController: UITableViewController {
     
     //sign out
     @IBAction func signOutButton(_ sender: Any) {
-        let alert = UIAlertController(title: "Alert", message: "Are you sure you wish to sign out?", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Are you sure you wish to sign out?", message: "", preferredStyle: UIAlertControllerStyle.alert)
         alert.view.tintColor = UIColor(red:0.75, green:0.22, blue:0.17, alpha:1.0)
         // add the actions (buttons)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))

@@ -108,7 +108,15 @@ class userRequestsTableViewController: UITableViewController {
         
         let curr = requests[indexPath.row]
         
-        cell.textLabel?.text = curr.gamePostedIn
+        var temp = ""
+        
+        if curr.tryingToBuy == false {
+            temp = "Selling"
+        } else {
+            temp = "Buying"
+        }
+        
+        cell.textLabel?.text = curr.gamePostedIn + ": \(temp) for $" + String(Int(curr.price))
         cell.selectionStyle = .none
 
         return cell

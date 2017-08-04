@@ -33,7 +33,7 @@ class enterPhoneNumberViewController: UIViewController, UITableViewDelegate {
                 //
                 //send an error and clear the phone number field
                 //
-                let alert = UIAlertController(title: "Error", message: "Invalid Phone Number", preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "Error", message: "Invalid phone number, double check +1 is at the front", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 alert.view.tintColor = UIColor(red:0.75, green:0.22, blue:0.17, alpha:1.0)
                 self.present(alert, animated: true, completion: nil)
