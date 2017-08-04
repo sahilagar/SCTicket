@@ -64,7 +64,7 @@ class verificationCodeViewController: UIViewController {
                         return
                     }
                     ref.observeSingleEvent(of: .value, with: { (snapshot) in
-                        let user = User(snapshot: snapshot)
+                        let _ = User(snapshot: snapshot)
                         //segues through app delegate
                         
                     })

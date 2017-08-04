@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //if user is currently logged in on phone or not, open the correct screen
         Auth.auth().addStateDidChangeListener { auth, user in
-            if let user = user {
+            if user != nil {
                 // User is signed in.
                 print("2")
                 let storyboard = UIStoryboard(name: "Games", bundle: nil)
