@@ -120,6 +120,9 @@ class userRequestsTableViewController: UITableViewController {
         
         cell.textLabel?.text = curr.gamePostedIn + ": \(temp) for $" + String(Int(curr.price))
         cell.selectionStyle = .none
+        
+        cell.textLabel?.textColor = UIColor.white
+        cell.backgroundColor = UIColor.clear
 
         return cell
     }

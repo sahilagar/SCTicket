@@ -36,6 +36,9 @@ class gamesTableViewController: UITableViewController {
             MBProgressHUD.hide(for: self.view, animated: true)
             self.tableView.reloadData()
         })
+        
+        let imageView = UIImageView(image: UIImage(named: "Background"))
+        self.tableView.backgroundView = imageView
     }
     @IBOutlet var gamesTableView: UITableView! {
         didSet {
@@ -96,6 +99,8 @@ class gamesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
         cell.textLabel?.text = games[indexPath.row]
+        cell.textLabel?.textColor = UIColor.white
+        cell.backgroundColor = UIColor.clear
         return cell
     }
     

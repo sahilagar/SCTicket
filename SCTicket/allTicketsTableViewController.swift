@@ -125,7 +125,7 @@ class allTicketsTableViewController: UITableViewController, MFMessageComposeView
         cell.priceLabel.text = "$" + String(Int(curr.price))
         cell.descriptionLabel.text = curr.description
         
-        //cell.contentView.backgroundColor = UIColor.lightGray
+        cell.backgroundColor = UIColor.clear
         return cell
     }
     
