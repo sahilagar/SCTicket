@@ -100,7 +100,7 @@ class gamesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
         cell.textLabel?.text = games[indexPath.row]
         cell.textLabel?.textColor = UIColor.white
-        cell.backgroundColor = UIColor.clear
+        cell.backgroundColor = UIColor.clear.withAlphaComponent(0.34)
         return cell
     }
     

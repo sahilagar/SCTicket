@@ -117,12 +117,23 @@ class userRequestsTableViewController: UITableViewController {
         } else {
             temp = "Buying"
         }
+        /*
+         if curr.tryingToBuy == false {
+         cell.buyingOrSellingLabel.text = "Selling"
+         } else {
+         cell.buyingOrSellingLabel.text = "Buying"
+         }
+         
+         cell.priceLabel.text = "$" + String(Int(curr.price))
+         cell.descriptionLabel.text = curr.description
+         */
         
         cell.textLabel?.text = curr.gamePostedIn + ": \(temp) for $" + String(Int(curr.price))
+
         cell.selectionStyle = .none
         
         cell.textLabel?.textColor = UIColor.white
-        cell.backgroundColor = UIColor.clear
+        cell.backgroundColor = UIColor.clear.withAlphaComponent(0.34)
 
         return cell
     }
