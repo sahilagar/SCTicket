@@ -12,6 +12,7 @@ import FirebaseAuthUI
 import FirebasePhoneAuthUI
 import FirebaseDatabase
 
+//enter verification code
 class verificationCodeViewController: UIViewController {
     
     var phoneNumberText = ""
@@ -27,7 +28,7 @@ class verificationCodeViewController: UIViewController {
     
     
     @IBAction func loginButton(_ sender: Any) {
-        //close keyboar
+        //close keyboard
         codeText.resignFirstResponder()
         activityindicator.startAnimating()
         
@@ -39,15 +40,13 @@ class verificationCodeViewController: UIViewController {
             if error != nil {
                 
                 //invalid authentication
-                let alert = UIAlertController(title: "Error", message: "Invalid Authentication Code", preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "Error", message: "Invalid Authentication Code \"\(self.codeText.text ?? "")\"", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 alert.view.tintColor = UIColor(red:0.75, green:0.22, blue:0.17, alpha:1.0)
                 self.present(alert, animated: true, completion: nil)
                 self.activityindicator.stopAnimating()
                 self.codeText.text = ""
-
-                print("verification code was entered wrong")
-            } else {
+            } else { //code was correct
                 self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
                 let phoneNumber = self.phoneNumberText
                 

@@ -18,7 +18,6 @@ class userRequestsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         //refreshes when pull down
@@ -105,35 +104,22 @@ class userRequestsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
         // Configure the cell...
-        
         let curr = requests[indexPath.row]
         
         var temp = ""
-        
         if curr.tryingToBuy == false {
             temp = "Selling"
         } else {
             temp = "Buying"
         }
-        /*
-         if curr.tryingToBuy == false {
-         cell.buyingOrSellingLabel.text = "Selling"
-         } else {
-         cell.buyingOrSellingLabel.text = "Buying"
-         }
-         
-         cell.priceLabel.text = "$" + String(Int(curr.price))
-         cell.descriptionLabel.text = curr.description
-         */
         
         cell.textLabel?.text = curr.gamePostedIn + ": \(temp) for $" + String(Int(curr.price))
 
         cell.selectionStyle = .none
         
         cell.textLabel?.textColor = UIColor.white
-        cell.backgroundColor = UIColor.clear.withAlphaComponent(0.34)
+        cell.backgroundColor = UIColor.clear
 
         return cell
     }
@@ -152,30 +138,5 @@ class userRequestsTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }   
     }
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

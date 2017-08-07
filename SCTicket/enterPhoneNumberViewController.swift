@@ -13,7 +13,7 @@ import FirebaseDatabase
 
 typealias FIRUser = FirebaseAuth.User
 
-
+//enter the phone number, sends a verification code
 class enterPhoneNumberViewController: UIViewController, UITableViewDelegate {
 
     
@@ -23,17 +23,18 @@ class enterPhoneNumberViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
-        phonenumberText.attributedPlaceholder = NSAttributedString(string:"ex: +14253940344")
+        phonenumberText.attributedPlaceholder = NSAttributedString(string:"ex: 2025550137")
     }
 
     @IBAction func sendCodeButton(_ sender: Any) {
         activityindicator.startAnimating()
-        PhoneAuthProvider.provider().verifyPhoneNumber(self.phonenumberText.text!) { (verificationID, error ) in
+        //add country code manually
+        PhoneAuthProvider.provider().verifyPhoneNumber("+1" + self.phonenumberText.text!) { (verificationID, error ) in
             if error != nil { //entered invalid phone number
                 //
                 //send an error and clear the phone number field
                 //
-                let alert = UIAlertController(title: "Error", message: "Invalid phone number, double check +1 is at the front", preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "Error", message: "Invalid phone number \"\(self.phonenumberText.text ?? "")\"", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 alert.view.tintColor = UIColor(red:0.75, green:0.22, blue:0.17, alpha:1.0)
                 self.present(alert, animated: true, completion: nil)
@@ -65,6 +66,5 @@ class enterPhoneNumberViewController: UIViewController, UITableViewDelegate {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }

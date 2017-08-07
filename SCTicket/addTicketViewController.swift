@@ -21,10 +21,6 @@ class addTicketViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        //hide navigation bar
-        //        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        
-        // Do any additional setup after loading the view.
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         
         priceEntered.attributedPlaceholder = NSAttributedString(string:"Price")
